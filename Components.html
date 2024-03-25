@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<head lang="en">
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	
+	<!-- Framework CSS -->
+	<link rel="stylesheet" href="/css/styles.css">
+	<link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet"/>
+	
+</head>
+<body>
+	<section class="components">
+    <h1>Components</h1>
+    <p>At the heart of this template lie its components, the building blocks that seamlessly integrate to form a cohesive and dynamic user experience. Each component serves a specific purpose, whether it's showcasing luxurious accommodations, facilitating effortless reservations, or engaging guests with captivating visuals and informative content. We have various types of components that range in:</p>
+    <ul>
+		<li><h2>Header</h2>
+			<ul>
+				<p>The Header component represents the navigation bar at the top of the website. Here's a breakdown of its structure and functionality:</p>
+				<ul>
+					<li>
+						<h3>State Management:</h3>
+						<p>The component uses the useState hook to manage state variables header, openMenu, and isHovered.
+							header controls the appearance of the header based on the scroll position.
+							openMenu controls the visibility of the mobile menu.
+							isHovered tracks whether a dropdown menu item is being hovered over.</p>
+					</li>
+					<li>
+						<h3>Scroll Effect:</h3>
+						<p>The component uses the useEffect hook to add an event listener to the window's scroll event.
+							When the user scrolls down more than 50 pixels, the header background changes to a solid color with a shadow, creating a sticky header effect.</p>
+					</li>
+					<li>
+						<h3>Header Content:</h3>
+						<p>The header contains a logo on the left and a navigation menu on the right.
+							The navigation menu consists of links to various pages of the website such as Home, About Us, Rooms, Blog, and Contact.
+							The navigation menu is responsive, adapting its layout for desktop and mobile screens.</p>
+					</li>
+					<li>
+						<h3>Dropdown Menus:</h3>
+						<p>There are dropdown menus for the Rooms and Blog links in both the desktop and mobile versions.
+							On desktop, hovering over these links reveals the dropdown menus.
+							On mobile, clicking/tapping on these links reveals the dropdown menus.</p>
+					</li>
+					<li>
+						<h3>Mobile Menu:</h3>
+						<p>
+							The mobile menu is hidden by default and can be toggled open/close by clicking on the menu icon (three horizontal lines) on the right side of the header.
+							When the mobile menu is open, it covers the entire screen and displays navigation links vertically.</p>
+					</li>
+					<li>
+						<h3>Styling and Transitions:</h3>
+						<p>The component utilizes Tailwind CSS classes for styling, including colors, padding, margins, and flexbox layout.
+							Transitions are applied to animate changes in the header background color and the opening/closing of the mobile menu.</p>
+					</li>
+					<li>
+						<h3>Navigation Links:</h3>
+						<p>Each navigation link is an anchor (<a>) element with an href attribute pointing to the corresponding page.
+							The links change color on hover, providing visual feedback to the user.</p>
+					</li>
+					<li>
+						<h3>Drop down Arrow Icons:</h3>
+						<p>There are arrow icons next to the dropdown menu items, indicating that they have sub-menus.
+							The icons rotate when the corresponding dropdown menu is opened, providing visual feedback to the user.</p>
+					</li>
+				</ul>
+               <p>Overall, the Header component provides users with easy navigation options and adapts its layout for both desktop and mobile devices, enhancing the user experience across different screen sizes.</p>
+				<img src="./assets/header.png" alt="" width="100%" height="auto">
+				<p>As can be seen in the above illustratin, the header component contains two sections,one for small devices and one for large devices that is toggled by a menu icon. Customization is easy since you can change the routes to your preferences along with the Logo design when its transparent and when the background has a different color</p>
+			</ul>
+		</li>
+		<li><h2>HeroSlider</h2>
+			<ul>
+				<p>To customize the `AOS.init()` function and the `HeroSlider` component, follow these steps:</p>
+				<ul>
+					<li>
+						<h3>Customizing AOS.init():</h3>
+						<p>
+							<ul>
+								<li>
+									<p><span>`duration`</span>:Adjust the duration of animations. Set it to the desired value in milliseconds.</p>
+								</li>
+								<li>
+									<p><span>`loop`</span>:Enable or disable looping of animations.</p>
+								</li>
+								<li>
+									<p><span>`once`</span>:Determine whether animations should only occur once or every time an element enters the viewport.</p>
+								</li>
+								<li>
+									<p><span>`offset`</span>:Set the offset (in pixels) from the top of the viewport at which animations trigger.</p>
+								</li>
+								<li>
+									<p><span>`easing`</span>:Enable or disable easing for animations.</p>
+								</li>
+							</ul>
+						</p>
+					</li>
+					<li>
+						<h3>Customizing the `HeroSlider` component:</h3>
+						<p>
+							<ul>
+								<li><span> Slides Configuration (`slides` array)</span>:
+							        - Update the `slides` array with your desired slide content. Each slide object should contain properties like `title`, `bg` (background image), and `btnText`.
+								</li>
+								<li>
+								<span>Parallax Effect</span>:
+							     - Adjust the parallax effect settings using the `useParallax` hook. You can modify parameters like `speed` to control the intensity and direction of the parallax effect.
+								</li>
+								<li>
+									<span>Responsive Behavior</span>:
+                                    - Customize the behavior of the slider for different screen sizes using the `isMobile` and `isMidMobile` variables from the `ScreenSizeContext`. Adjust the layout, styling, and behavior accordingly.
+								</li>
+								<li>
+									<span>Slide Change Handling</span>:
+                                    - Implement the `handleSlideChange` function to handle slide change events. This function updates the `activeIndex` state based on the current slide index.
+								</li>
+								<li>
+									<span>Swiper Configuration</span>:
+									- Configure the Swiper component with desired modules (e.g., `EffectFade`, `Autoplay`), effects (e.g., `fade`), autoplay settings, and event handlers (e.g., `onSlideChange`).
+								</li>
+								<li>
+									<span>Slide Rendering</span>:
+                                    - Map through the `slides` array to render individual slide components. Customize the slide content and styling based on the properties of each slide object.
+								</li>
+								<li>
+									<span>Conditional Rendering and Styling</span>:
+									- Conditionally apply CSS classes or styles based on the active slide index (`activeIndex`). For example, you can scale up the active slide for emphasis.
+								</li>
+								<li>
+									<span>Button Click Handling</span>:
+									Implement functionality for buttons within slides (e.g., booking buttons). Add event handlers to handle button clicks and perform corresponding actions.
+								</li>
+							</ul>
+						</p>
+					</li>
+					
+                By customizing these aspects, you can tailor the AOS animations and the `HeroSlider` component to fit your specific design and functionality requirements. Remember to test your customizations across different devices and screen sizes to ensure a consistent and optimized user experience.
+				</ul>
+				<img src="./assets/heroSlider.png" alt="" width="100%" height="auto">
+				<p>For customizatin purposes</p>
+				<ul>
+					<li>Import your images from the '../assets/img/heroslider' folder</li>
+					<li>Change according the data on Slides array according to your own preference</li>
+				</ul>
+			</ul>
+		</li>
+		<li><h2>BookForm</h2>
+			<p>The `BookForm` component is a form used for booking a room. It consists of input fields for check-in date, check-out date, number of adults, and number of kids, along with a button to submit the form. Here's a summary of its structure and functionality:</p>
+             <ul>
+				<li>
+					<h3>Component Structure</h3>
+					<p>- The component renders a `form` element with a specified height and width.
+					  - Inside the form, there's a flex container (`div`) with a row layout for organizing input fields and the submit button.</p>
+				</li>
+				<li>
+					<h3>Input Fields</h3>
+					<p>- Four input fields are included, each representing a different aspect of the booking:
+						- Check-in date: Rendered using the `CheckIn` component.
+						- Check-out date: Rendered using the `CheckOut` component.
+						- Number of adults: Rendered using the `AdultsDropdown` component.
+						- Number of kids: Rendered using the `KidsDropdown` component.
+					  - Each input field is wrapped in a `div` with a flexible width (`flex-1`) and a right border to separate them.</p>
+				</li>
+				<li>
+					<h3>Submit Button</h3>
+					<p> - A submit button is included at the end of the form.
+						- The button triggers the `handleClick` function when clicked, which is retrieved from the `RoomContext`.
+						- The `handleClick` function is called with the event object (`e`) as an argument, allowing for further processing of the form submission.
+					 </p>
+				</li>
+				<li>
+					<h3>Context Usage</h3>
+					<p>- The `handleClick` function is accessed from the `RoomContext` using the `useContext` hook.
+					   - This function likely contains logic for handling the form submission, such as validating input data and initiating the booking process.
+					 </p>
+				</li>
+				<li>
+					<h3>Event Handling</h3>
+					<p>- The `onClick` event handler is attached to the submit button, triggering the `handleClick` function when clicked.
+						- The event object (`e`) is passed to the `handleClick` function, providing access to information about the event, if needed.</p>
+				</li>
+			 </ul>
+			 <img src="./assets/bookform.png" alt="" width="100%" height="auto">
+
+By organizing the form elements into a cohesive layout and utilizing context for accessing necessary functionality, the `BookForm` component provides a convenient way for users to book a room with specified check-in/out dates and guest counts.
+			<p> Its made up of:</p>
+			<ul>
+				<li>AdultsDropdown.jsx component
+					<ul>
+						The `AdultsDropdown` component provides a user-friendly interface for selecting the number of adults for a booking, utilizing context for state management and a dropdown menu for options selection.
+						<li><span>Context Usage</span>:- Inside the component, it utilizes the `useContext` hook to access the `adults` state value and the `setAdults` function from the `RoomContext`. This context likely provides information about the number of adults selected for booking.</li>
+						<li><span>Dropdown Menu</span>:- The dropdown menu is implemented using the `Menu` component from the 'headlessui/react' library. The `Menu` component wraps both the button trigger and the dropdown items.
+							- The button trigger (`Menu.Button`) is styled to display the current selection (number of adults) and an icon (likely a down chevron) indicating that it's a dropdown button.
+							- The dropdown items (`Menu.Items`) are rendered as an unordered list (`ul`). Each item (`Menu.Item`) corresponds to a specific selection option (e.g., number of adults). These items are dynamically generated based on the `lis` array, which presumably contains objects with `name` properties representing the number of adults.
+						 </li>
+						<li><span>Styling</span>:- The dropdown menu and its items are styled using Tailwind CSS utility classes to control their appearance, such as background color, border, hover effects, and spacing.</li>
+
+					</ul>
+					<img src="./assets/adultsDrop.png" alt="" width="100%" height="auto">
+				</li>
+				<li>KidsDropdown.jsx component
+					<ul>
+						<li>Similar to AdultsDropdown but for selecting kids for a booking, utilizing context for state management and a dropdown menu for options selection.</li>
+					</ul>
+					
+				</li>
+				<li>CheckIn.jsx component
+					<ul>
+						The CheckIn component is a date picker component that allows users to select a check-in date for booking purposes. Here's a summary of its structure and functionality:
+                
+						<li><span>State Management:</span>Inside the component, it utilizes the useState hook to manage the state of the selected check-in date (startDate). Initially, the state is set to false.</li>
+						<li><span>Date Picker Integration</span>
+							The component integrates a date picker functionality using an external library, likely react-datepicker.
+							The DatePicker component is rendered within the component's JSX, allowing users to select a date from a calendar interface.
+							The selected prop of the DatePicker component is bound to the startDate state, indicating the currently selected check-in date.
+							The onChange prop of the DatePicker component is assigned a function that updates the startDate state whenever a new date is selected by the user.</li>
+						<li>
+							<span>Icon Display</span>
+							An icon representing a calendar is displayed alongside the date picker input field. This icon serves as a visual cue to users that the input field is for selecting a date.
+                            The icon is positioned using absolute positioning (absolute) within a parent container (relative). This ensures proper alignment of the icon within the input field.
+						</li>
+						<li>
+							<span>
+							 Styling
+							</span>
+							The component utilizes Tailwind CSS utility classes for styling, including flex for flexbox layout, items-center for vertical alignment, justify-end for alignment to the end of the container, and others for responsive design (md:hidden, lg:block).
+						</li>
+
+					</ul>
+					<img src="./assets/checkin.png" alt="" width="100%" height="auto">
+					Overall, the CheckIn component provides a user-friendly interface for selecting a check-in date, enhancing the booking experience for users.
+				</li>
+				<li>CheckOut.jsx component
+					<ul>
+						<li>The CheckOut component provides a user-friendly interface for selecting a check-out date, enhancing the booking experience for users.</li>
+					</ul>
+				</li>
+			</ul>
+			
+			<p>Requires little to no customization if the theme is customized.Its also ready for any further functinality that may require the backend</p>
+		</li>
+		<li><h2>Breaker</h2>
+			<ul>
+				<li>
+					<img src="./assets/breaker.png" alt="" width="100%" height="auto">
+					<p>This is a component serves as a flexible element that can be used to add spacing or visual breaks between other elements in a React application's UI. Its height can be adjusted by modifying the Tailwind CSS classes applied to it, providing developers with a convenient way to control its appearance.</p>
+				</li>
+			</ul>
+		</li>
+		
+		<li>
+			<h2>ArrowUp</h2>
+			<p>
+				The `ArrowUp` component renders a button that appears at the bottom-right corner of the screen when the user scrolls down, allowing them to quickly scroll back to the top of the page. Here's a summary of its structure and functionality:
+
+
+By providing users with a convenient way to return to the top of the page, the `ArrowUp` component enhances the user experience, especially on pages with lengthy content.
+			</p>
+			<ul>
+              <li>
+				<h3>State Management</h3>
+				<p>The component uses the `useState` hook to manage the `header` state, which determines whether the button should be displayed based on the user's scroll position.</p>
+			  </li>
+			  <li>
+			    <h3>Effect for Scroll Event</h3>
+				<p>- The `useEffect` hook is used to add a scroll event listener to the window.
+					- When the user scrolls, the event listener updates the `header` state based on the scroll position. If the scroll position is greater than 50 pixels, `header` is set to `true`; otherwise, it's set to `false`.</p>
+				</li>
+				<li>
+			      <h3>Rendering Logic</h3>
+			    	<p>
+					- The component conditionally renders the button based on the value of the `header` state.
+					- If `header` is `true`, indicating that the user has scrolled down, the button is rendered.
+					- If `header` is `false`, indicating that the user is at the top of the page, an empty fragment is rendered.
+				  </p>
+				</li>
+			    <li>
+					<h3>Button Behavior</h3>
+					<p>- When the button is clicked (`onClick` event), the `window.scrollTo` function is called to scroll back to the top of the page (coordinates `{0, 0}`).</p>
+				</li>
+				<li>
+					<h3>Styling and Positioning</h3>
+					<p>- The button is styled and positioned using Tailwind CSS utility classes.
+						- It's fixed to the bottom-right corner of the screen (`fixed bottom-8 right-8`).
+						- The `z-50` class ensures that the button appears above other content on the page.</p>
+				</li>
+				
+			 </li>
+			 <li>
+				<h2>Others</h2>
+				 <p>Other components majorly require change in theme, content, and images which can be done as depicted in their respective menus</p>
+			   </li>
+			</ul>
+		</li>
+		<!-- <li>Facilities</li>
+		<li>Amenities</li>
+		<li>ReviewPage</li>
+		<li>BlogPage</li> --> 
+	
+	</ul>
+</section>
+</body>

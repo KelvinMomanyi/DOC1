@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<head lang="en">
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	
+	<!-- Framework CSS -->
+	<link rel="stylesheet" href="/css/styles.css">
+	<link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet"/>
+	
+</head>
+<body>
+	<section class="pages">
+    <h1>Pages</h1>
+	 <ul>
+		<li>
+			<h2>Home</h2>
+			<ul>
+				<li><span>HeroSlider</span>: This component displays a carousel or slideshow featuring prominent images or messages related to the homepage.</li>
+
+			<li><span>BookForm</span>: Positioned within a container and styled to have a background color with partial transparency, this component appears at the top of the page, as a call-to-action for booking accommodations or services. It is also given a shadow effect on medium-sized screens and is positioned relatively within the container.</li>
+
+		    <li><span>Rooms</span>:
+				 This component displays information or listings about available rooms, accommodations, or properties.</li>
+
+		    <li><span>AboutUs</span>: This component likely provides information about the company, business, or organization behind the website.</li>
+
+		    <li><span>Facilities</span>: This component showcases the amenities or facilities available to users, such as swimming pools, gyms, or dining options.</li>
+
+		    <li><span>Breaker</span>: This component serves as a visual divider or section separator, providing a visual break between different sections of the homepage.</li>
+
+	     	<li><span>Amenities</span>: Similar to the Facilities component, this section highlights additional amenities or services offered to users.</li>
+
+		   <li><span>ReviewsPage</span>: This component could display customer reviews or testimonials, offering social proof and enhancing the credibility of the business or services being offered.</li>
+
+		   <li><span>BlogPage</span>: This component likely features blog posts or articles related to the website's topic or industry, providing informative content for visitors.</li>
+			</ul>
+			<p>To customize this page, you can modify the content and styling of each component according to your specific needs and preferences. You can adjust layout, colors, fonts, and content to match your brand identity and user experience goals. Additionally, you can add, remove, or rearrange components to tailor the page structure to best showcase your offerings and engage your audience.</p>
+			<img src="./assets/Home.png" alt="" width="100%" height="auto">  
+		</li>
+		<li>
+			<h2>About</h2>
+			<p>The provided code represents a React component named `AboutPage`, which likely serves as the about page of a website or web application. Here's a summary of its structure and functionalities:
+				<ul>
+					<li>
+						<span>Initialization</span>: The `AOS.init()` function initializes the Animate On Scroll library with certain configuration options like duration, offset, and easing.
+					</li>
+					<li>
+						<span>Data Setup</span>: The `slides` array contains data for testimonials or slides to be displayed in a swiper/slider component. Each slide contains an id, title, and description.
+					</li>
+					<li>
+						<span>Component Structure</span>:
+				   - The component starts with a hero section displaying a background image and a title.
+				   - Following sections include information about the hotel, awards, years of experience, teams, and customer reviews.
+				   - The component uses various grid layouts, images, text elements, and interactive components like buttons and swiper/slider for testimonials.
+					</li>
+					<li>
+			        <span>Responsive Design</span>:
+				         - The component adjusts its layout and styles based on the screen size using conditional rendering and different CSS styles for different screen sizes.
+				        - Grid layouts and image placements are adjusted to maintain responsiveness.
+					</li>
+					<li>
+                       	
+				     <span>Animation</span>:
+				      - The `data-aos` attribute is used to apply animations to certain elements on scroll, enhancing the visual appeal and user experience.
+					</li>
+					<li>
+						<span>External Libraries</span>:
+						- The component utilizes external libraries like Swiper for slider functionality and Font Awesome for icons.
+					</li>
+					<li>      
+				      <span>Context Usage</span>:
+				       - The component may use context to access information about the screen size (`isMobile`, `isMidMobile`) for responsive design.
+					</li>
+					<li>
+                      
+			       	<span>Custom Styles</span>:
+			        	- Custom styles are applied using inline styles and CSS classes to achieve specific layout and design requirements.
+					</li>
+				</ul>
+				<p>To customize this page, you can modify the content, styles, and functionalities according to your project's needs. You can update the data, adjust the layout, apply different animations, and integrate additional components or libraries as required.</p>
+				 </p>
+			<img src="./assets/about.png" alt="" width="100%" height="auto">  
+		</li>
+		<li>
+			<h2>RoomPage</h2>
+			<p>The `RoomsPage` component appears to be a page dedicated to showcasing rooms and suites available at a hotel. Here's a summary of its structure and functionality:</p>
+			<ul>
+				<li><span>Context Usage</span>: The component utilizes the RoomContext to access information about available rooms and suites. It retrieves the `rooms` data and `loading` status from the context.</li>
+					
+				<li><span>Hero Section</span>: The page begins with a hero section featuring a background image and a title "The Rooms." The background image is overlaid with a semi-transparent black overlay to enhance readability.</li>
+					
+			   <li><span>Loading Spinner</span>: If the `loading` status is true, indicating that data is being fetched, a loading spinner (SpinnerDotted component) is displayed to provide feedback to the user.</li>
+					
+			   <li><span>Room Display</span>: Within a container, the rooms are displayed in a grid layout. Each room is represented by the `Room` component, which receives room data (`room`) as a prop. The grid layout adjusts responsively based on screen size.</li>
+					
+			   <li><span>Dynamic Room Rendering</span>: The `map` function iterates over the `rooms` array, rendering a `Room` component for each room in the array. Each `Room` component is passed the corresponding room data and has a unique key based on the room's `id`.</li>
+					
+			   <li><span>Styling and Typography</span>: Various CSS classes are used to style elements, including text alignment, font sizes, and colors. The typography reflects the branding of "Royal Hotels" with appropriate font choices and text styles.</li>
+					
+			</ul>
+			<p>To customize this page, you can modify the content, styling, and layout according to your specific requirements. You can adjust the hero section's background image and title, customize the loading spinner, update the grid layout for room display, and refine the styling to match your design preferences. Additionally, you can enhance the functionality by adding filtering options, room details, or booking functionalities as needed.</p>
+			<img src="./assets/rooms.png" alt="" width="100%" height="auto">  
+			<ul>
+				<li>
+					<h2>Room Details</h2>
+		        	<p>The `RoomDetails` component appears to be a page dedicated to displaying detailed information about a specific room or suite within a hotel. Here's a summary of its structure and functionality:</p>
+                       <ul>
+						<li><span>Context Usage</span>: The component utilizes the RoomContext to access information about available rooms. It retrieves the `rooms` data array from the context.</li>
+						
+					    <li><span>URL Parameters</span>: The component uses the `useParams` hook from React Router to extract the `id` parameter from the URL, indicating which room's details to display.</li>
+						
+						 <li><span>Room Retrieval</span>: It searches for the room with the specified `id` within the `rooms` array and extracts its details such as name, description, facilities, price, and image.</li>
+						
+						<li><span>Hero Section</span>: The page begins with a hero section featuring a background image related to the room and a title displaying the room's name.</li>
+						
+					    <li><span>Room Details</span>: The component displays detailed information about the room, including its name, description, image, facilities, reservation options, and hotel rules.</li>
+						
+					    <li><span>Facilities Display</span>: The room's facilities are displayed using a grid layout, with each facility represented by an icon and name.</li>
+						
+						<li><span>Reservation Options</span>: It provides options for users to make a reservation, including selecting check-in and check-out dates, specifying the number of adults and kids, and displaying the booking price.</li>
+						
+						<li><span>Hotel Rules</span>: The component displays rules specific to the hotel or the room, such as check-in and check-out times, and policies regarding pets and smoking.</li>
+						
+						<li><span>Styling and Typography</span>: Various CSS classes and styles are used to format and style the text, layout, and components for a visually appealing presentation.</li>
+					   </ul>
+						
+						<p>To customize this page, you can modify the content, styling, and layout according to your specific requirements. You can update the hero section's background image and title, refine the room details display, customize the reservation options, and adjust the styling to match your design preferences. Additionally, you can enhance the functionality by adding additional features such as reviews, room amenities, or interactive components for user engagement. </p>
+			       <img src="./assets/roomDetails.png" alt="" width="100%" height="auto">  
+				</li>
+			</ul>
+		</li>
+		<li>
+			<h2>Blog</h2>
+			<p>The `Blog` component represents a blog page where users can view and interact with various blog posts. Here's a summary of its structure and functionality:</p>
+			<ul>
+				<li><span>Context Usage</span>: The component accesses data about blog posts (`blogs`) from the RoomContext. Additionally, it retrieves information about the screen size (`isMidMobile`) from the ScreenSizeContext, which might be used for responsive design.</li>
+			    <li><span>Hero Section</span>: The page starts with a hero section featuring a background image and a title "Blog." The background image is overlaid with a semi-transparent black overlay to enhance readability.
+				</li>
+				<li>
+					<span>Main Content</span>: 
+					- The main content area is contained within a container element to manage its width and center it on the page.
+					- Within the main content, there are two main sections: the blog post grid and the recent posts sidebar.
+				   
+				</li>
+				<li>
+					<span>Blog Post Grid</span>: 
+					- Blog posts are displayed in a grid layout, with each post represented by an image and the post's title. Users can click on the post to read more about it.
+					- Pagination buttons are also provided, although in this example, they are static and don't have any functionality.
+				 
+				</li>
+				<li>
+					<span>Recent Posts Sidebar</span>: 
+					- On the sidebar, recent and popular posts are displayed in a list format. Users can click on a post title to navigate directly to that post.
+					- Additionally, there is a search input field for users to search for specific posts.
+				</li>
+				<li>
+					<span>Dynamic Routing</span>: 
+					- Each blog post image and title is wrapped in a `Link` component from React Router, allowing users to navigate to the individual blog post pages (`/blog/:id`) when clicked.
+				</li>
+				<li>
+					<span>Styling and Interaction</span>:
+					- Various CSS classes and inline styles are used for styling, including background colors, text colors, padding, and margins.
+					- Hover effects are applied to the blog post images and titles to provide visual feedback to users when interacting with them.
+				</li>
+			</ul>
+			<p>To customize this page, you can modify the content, styling, and functionality according to your specific requirements. You can update the hero section's background image and title, refine the layout and styling of the main content area, implement functional pagination, and enhance the search functionality. Additionally, you can customize the sidebar content and styling to better suit your design preferences and user experience goals.</p>
+			<img src="./assets/blogpage.png" alt="" width="100%" height="auto">  
+			<ul>
+				<li>
+					<h2>Blog Details</h2>
+		        	<p>The `BlogDetails` component represents a page dedicated to displaying detailed information about a specific blog post. Here's a summary of its structure and functionality:</p>
+					
+
+                      <li><span> Context Usage</span>: The component accesses data about blog posts (`blogs`) from the RoomContext. Additionally, it retrieves the `id` parameter from the URL using the useParams hook to identify the specific blog post to display.</li>
+
+					<li><span>Blog Post Retrieval</span>: It searches for the blog post with the specified `id` within the `blogs` array and extracts its details such as name, description, and image.</li>
+
+				   <li><span>Hero Section</span>: The page starts with a hero section featuring a background image related to the blog post and displays the blog post's title.</li>
+
+				   <li><span>Main Content</span>: 
+                       - The main content area is contained within a container element to manage its width and center it on the page.
+                        - The main content is divided into two sections: the left section for displaying detailed information about the blog post and the right section for related content.</li>
+
+					<li><span>Blog Post Details</span>: 
+                        - The left section displays the blog post's image, title, and description.
+                        - It also includes information about hotel rules related to the blog post.
+                        - Below the details, there's a form for users to leave comments on the blog post.</li>
+
+                    <li><span>Comments Form</span>: 
+                   - The comments form includes input fields for the user's full name, email address, and a textarea for writing comments.
+                   - A submit button allows users to submit their comments.</li>
+
+				<li><span> Sidebar</span>: 
+                 - The right section of the page contains a sidebar with a search input field for searching posts.
+                  - It also displays popular blog posts, allowing users to navigate to other blog posts directly.</li>
+
+                <li><span>Dynamic Routing</span>: 
+                 - Each popular blog post image and title in the sidebar is wrapped in a `Link` component from React Router, allowing users to navigate to the individual blog post pages (`/blog/:id`) when clicked.</li>
+
+				 <li><span>Styling and Interaction</span>:
+                  - Various CSS classes and inline styles are used for styling, including background colors, text colors, padding, and margins.
+                  - Hover effects are applied to the blog post images and titles in the sidebar to provide visual feedback to users when interacting with them.</li>
+
+                 <p>To customize this page, you can modify the content, styling, and functionality according to your specific requirements. You can update the hero section's background image and title, refine the layout and styling of the main content area, customize the comments form, and adjust the sidebar content and styling to better suit your design preferences and user experience goals.</p>
+			       <img src="./assets/blogDetails.png" alt="" width="100%" height="auto">  
+				</li>
+			</ul>
+		</li>
+		<li>
+			<h2>Contact</h2>
+			<p>The `Contact` component represents a page where users can contact the website or business. Here's a summary of its structure and functionality:</p>
+			<ul>
+				<li><span>Hero Section</span>: The page starts with a hero section featuring a background image related to contacting, with a title "CONTACT US".</li>
+				<li><span>Main Content</span>: 
+					- The main content area is contained within a container element to manage its width and center it on the page.
+					- The main content is divided into two sections: 
+					  - The left section contains contact information such as address, email, and phone number.
+					  - The right section is a form for users to fill out to send a message.</li>
+				<li><span>Contact Information</span>: 
+					- The left section displays contact details, including the business location, email address, and phone number.
+					- Each contact detail is presented with an icon and text.</li>
+				<li><span>Contact Form</span>: 
+					- The right section contains a form with input fields for the user's name, email, password, and message.
+					- Upon filling out the form, users can click the "SEND MESSAGE" button to submit their message.</li>
+				<li><span>Styling and Interaction</span>:
+					- Various CSS classes and inline styles are used for styling, including background colors, text colors, padding, and margins.
+					- The form input fields and textarea have placeholder text to guide users on what information to input.
+					- The form submit button has a distinctive style to attract user attention and indicate its functionality.</li>
+				<li><span>Map Integration</span>: 
+					- The `Map` component is included at the bottom of the section, presumably to display the business location visually on a map.</li>	
+			</ul>
+            <p>To customize this page, you can modify the content, styling, and functionality according to your specific requirements. You can update the hero section's background image and title, refine the layout and styling of the main content area, customize the contact information presentation, adjust the form fields and styling, and integrate additional features such as validation or confirmation messages based on your design preferences and user experience goals.</p>
+			<img src="./assets/contact.png" alt="" width="100%" height="auto">  
+		</li>
+	 </ul>
+     
+
+   </section>
+</body>

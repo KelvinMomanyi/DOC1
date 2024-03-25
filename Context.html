@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<head lang="en">
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	
+	<!-- Framework CSS -->
+	<link rel="stylesheet" href="/css/styles.css">
+	<link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet"/>
+	
+</head>
+<body>
+	<section class="context">
+    <h1>Context</h1>
+    <ul>
+		<li><h2>RoomProvider</h2>
+			The `RoomProvider` component serves as a context provider for sharing state and functionality related to rooms, blogs, menu, and booking details throughout the application. Below is a summary of its structure and functionality:
+
+
+
+By utilizing the `RoomProvider`, components nested within it can easily access and modify shared state and functionality related to room booking and blog management.
+			<ul>
+				<li> <h3>Component Definition</h3>
+					The `RoomProvider` component is a functional component that accepts `children` as props. It uses object destructuring to access `children`.
+				</li> 
+				 <li><h3>State Management</h3>
+					<p>Several state variables are initialized using the `useState` hook to manage different aspects of the application state:</p>
+					<ul>
+						<li>- `blogs`: Manages the state of blog data.</li>
+						<li>- `rooms`: Manages the state of room data.</li>
+						<li>- `menu`: Manages the state of menu data.</li>
+						<li>- `adults`: Tracks the number of adults selected for booking.v</li>
+						<li> - `kids`: Tracks the number of kids selected for booking.</li>
+						<li> - `total`: Calculates the total number of persons (adults + kids) for booking.</li>
+						<li> - `loading`: Manages the loading state when filtering rooms based on the total number of persons.</li>
+					</ul>
+				  </li>
+				  <li>
+					<h3>Effect Hook</h3>
+					An effect hook (`useEffect`) is used to recalculate the total number of persons (`total`) whenever the values of `adults` or `kids` change. This ensures that the total count stays up to date.
+				  </li>
+				  <li>
+					<h3>Handle Click Function</h3>
+                    The `handleClick` function is invoked when the user clicks on the booking button. It sets the `loading` state to `true` to indicate that the filtering process is in progress.
+					It filters the room data based on the total number of persons (adults + kids) selected for booking (`total`). Only rooms with a maximum capacity greater than or equal to the total count are retained.
+					After a simulated delay of 3 seconds (to mimic asynchronous operations), the filtered room data is set using the `setRooms` function, and the loading state is set back to `false`.
+				 
+				  </li>
+				  <li>
+					<h3>Context Provider</h3>
+                    The `RoomContext.Provider` component wraps around the `children`, providing access to the shared state and functions via the context API.
+					The values provided by the context include `rooms`, `menu`, `adults`, `setAdults`, `kids`, `setKids`, `loading`, and `blogs`.
+				  </li>
+				  <img src="./assets/roomProv.png" alt="" width="100%" height="auto"> 
+			</ul>
+		</li>
+		<li>
+			<h2>ScreenSizeContext</h2>
+			The `ScreenSizeProvider` component is responsible for detecting the screen size and providing this information to its children components through a context named `ScreenSizeContext`. Below is a summary of its structure and functionality:
+			<ul>
+				<li> <h3>Component Definition</h3>
+					`ScreenSizeProvider` is a functional component that takes `children` as props.
+				</li> 
+				 <li><h3>State Management</h3>
+					<p>- It manages two state variables:</p>
+					<ul>
+						<li>- `isMobile`: Indicates whether the screen size is considered as mobile (max-width: 500px).</li>
+						<li>-  `isMidMobile`: Indicates whether the screen size is considered as mid-mobile (max-width: 1000px).</li>
+						
+					</ul>
+				  </li>
+				  <li>
+					<h3>Effect Hook</h3>
+					<ul>
+						<li>- Two `useEffect` hooks are used to listen for changes in screen size based on media queries.</li>
+						<li> - The first `useEffect` hook listens for changes in screen size corresponding to mobile devices (max-width: 500px).</li>
+						<li> - The second `useEffect` hook listens for changes in screen size corresponding to mid-mobile devices (max-width: 1000px).</li>
+						<li>  - Each hook sets the initial state of the corresponding `isMobile` or `isMidMobile` variable based on the current match of the media query.</li>
+						<li>- They also define a callback function to update the state variables whenever the media query matches change.</li>
+						<li>- The callback functions are added as event listeners to the media queries, and they update the state accordingly.</li>
+						<li> - Finally, each hook removes the event listener when the component is unmounted to avoid memory leaks.</li>
+					</ul>
+				  </li>
+				  <li>
+					<h3>Context Provider</h3>
+					The `ScreenSizeProvider` component wraps around its children components, providing access to the `isMidMobile` and `isMobile` states via the `ScreenSizeContext` context.
+					The context value includes `isMidMobile` and `isMobile` states.
+				  </li>
+				  <img src="./assets/Screensize.png" alt="" width="100%" height="auto"> 
+			</ul>
+
+
+By utilizing the `ScreenSizeProvider`, components within its subtree can easily access and react to changes in screen size, adjusting their layout and behavior accordingly.
+		</li>
+	</ul>
+	
+
+  </section>
+</body>

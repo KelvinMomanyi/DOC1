@@ -8,17 +8,55 @@
 	
 </head>
 <body>
-    <h1>Theme,Color & Logo</h1>
-	 
-	  <h2>Theme</h2>
-	  <p>By default the theme set for this template is:</p>
-	  <ul>
-		<li>primary:'#0a0a0a', Black background color</li>
-		<li>accent: '#967142', Gold/brown color</li>
-		<li>secondary:'#991B1B', Dark red color</li>
-	  </ul>
-	  <p>These main theme colors can be changed on the tailwind.config.js file in the secrion as can be seen below</p>
-	  <img src="./assets/theme.PNG" alt="" height="180px" width="100%">
-	  <p>Other colors on the theme color is the bg-red-800</p>
-	  
+	<section class="theme">
+      <h1>Theme</h1>
+	    <h2>Color</h2>
+	    <p>By default the theme set for this template is:</p>
+	    <ul>
+		  <li><span>primary</span>:'#0a0a0a', Black background color</li>
+		  <li><span>accent</span>: '#967142', Gold/brown color</li>
+		  <li><span>secondary</span>:'#991B1B', Dark red color</li>
+	   </ul>
+	    <p>These main theme colors can be changed on the tailwind.config.js file in the secrion as can be seen below</p>
+	    <img src="./assets/theme.PNG" alt="" height="auto" width="80%">
+	   
+		<h2>Fonts</h2>
+	<p>The fonts used in this template are from Google fonts and have being imported via the <span>index.html</span> file in the main folder. In terms of the types, the template uses three major fonts, namely:</p>
+	<img src="./assets/font1.png" alt="" height="auto" width="80%">
+	<ul>
+		<li><span>Primary</span>:'Gilda Display'</li>
+		<li><span>Secondary</span>:'Barlow'</li>
+		<li><span>Tertiary</span>:'Barlow Condensed'</li>
+	 </ul>
+    <p></p>
+     <h3>Customization</h3>
+	 <ul>
+		<li>
+			<h3>Step 1</h3>
+			<p>Link the fonts of your choice from google fonts or any other sources using the Link tag in the main index.html folder</p>
+		</li>
+		<li>
+			<h3>Step 2</h3>
+			<p>In the tailwind.config.js file in the main folder, change the fonts to your preferred font types in the 'fontFamily' category</p>
+			<img src="" alt="">
+		</li>
+	 </ul>
+	    <!-- <p>Other colors on the theme color is the bg-red-800</p> -->
+		<h2>Headings, Titles & Content</h2>
+    <p>In the Royal Hotels React template, all headings and titles can be easily customized according to one's liking by following these steps:</p>
+	<ul>
+		<li>
+			<h3>Locate Heading & Title Components</h3>
+			<p>Identify the components that are responsible for rendering the particular heading or title that needs to be changed. They may be easily be identified in their respective tags such as h1,h2,h3, p, span and a tags.</p>
+		</li>
+		<li>
+			<h3>Identify Component props or styling</h3>
+             <p>Review the props available for each heading tag. These props might include attributes such as color, fontfamily, fontweight, textAlign, size etc.</p>
+		</li>
+		<li>
+			<h3>Modify props</h3>
+			<p>To customize a heading, simply locate its corresponding tag and adjust its props as desired. For instance if you want to change the color of a text to blue, locate its tag in the compoment and change it prop to 'text-blue-500', according to your preference. Or change its content by changing the content between the tags for instance <a>Home</a> to <a>About</a> </p>
+		</li>
+	</ul> 
+	</section>  
 </body>
